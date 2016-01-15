@@ -13,8 +13,8 @@ var join = require('path').join;
  * @api public
  */
 
-module.exports = exports = function(file) {
-  var home = getHomePath();
+module.exports = exports = function(file, home) {
+  if (!home) home = getHomePath();
 
   if (!file && !home) return {};
   file = file || join(home, '.netrc');
